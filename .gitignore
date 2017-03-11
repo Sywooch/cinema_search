@@ -28,6 +28,11 @@ phpunit.phar
 
 tests/_output/*
 tests/_support/_generated
+<<<<<<< HEAD
 
 web/index.php
 config/db.php
+=======
+web/index.php
+config/db.php
+>>>>>>> d55a4121e82effe96400c2eff115fc61159e131b

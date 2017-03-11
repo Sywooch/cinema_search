@@ -63,6 +63,19 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionBlog()
+    {
+//	    return $this->render('Страницы такой нет и возможно не будет!!!');
+	    $user = [
+            'name' => 'Vasily',
+            'age' => 3
+        ];
+        return $this->render('blog',[
+            'autor' => $user,
+            'text' => 'Lorem ipsum'
+        ]);
+    }
+
     /**
      * Login action.
      *

@@ -13,7 +13,7 @@ class m170307_164457_film extends Migration
     {
         echo "m170307_164457_film cannot be reverted.\n";
 
-        return false;
+        return true;
     }
 
     /*

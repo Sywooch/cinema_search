@@ -23,8 +23,8 @@ class CountryController extends \yii\web\Controller
 //        echo '</pre>';
 
         return $this->render('view',[
-//            'singleCountry' => ((is_null($country))?'fgf':$country)
-            'singleCountry' => $country
+            'singleCountry' => ((is_null($country))?'fgf':$country)
+//            'singleCountry' => $country
         ]);
     }
 

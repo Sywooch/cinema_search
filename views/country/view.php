@@ -6,6 +6,7 @@
     foreach ($singleCountry as $key => $value )
         echo $key.'-----'.$value;
 */
-    echo '<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.$singleCountry['name'];
+
+    echo '<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.((is_null($singleCountry))?'Пустое значение!':$singleCountry['name']);
 
 ?>

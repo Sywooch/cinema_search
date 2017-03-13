@@ -12,7 +12,7 @@ class m170313_113458_film extends Migration
              'nameFilm' => 'VARCHAR(100)',
              'ageLimit' => 'VARCHAR(45)',
              'yearFilm' => Schema::TYPE_INTEGER,
-             'note' => Schema::TEXT,
+             'note' => Schema::TYPE_STRING,
          ]);
     }
 

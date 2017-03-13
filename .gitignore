@@ -30,5 +30,7 @@ tests/_output/*
 tests/_support/_generated
 
 web/index.php
+web/assets
 vendor
 config/db.php
+

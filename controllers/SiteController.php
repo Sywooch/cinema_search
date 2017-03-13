@@ -65,6 +65,7 @@ class SiteController extends Controller
 
     public function actionBlog()
     {
+
         $user = [
             'name' => 'Vasily',
             'age' => 3
@@ -73,6 +74,17 @@ class SiteController extends Controller
                 'author' => $user,
                 'text'   => 'Lorem ipsum'
             ]);
+
+//	    return $this->render('Страницы такой нет и возможно не будет!!!');
+	    $user = [
+            'name' => 'Vasily',
+            'age' => 3
+        ];
+        return $this->render('blog',[
+            'autor' => $user,
+            'text' => 'Lorem ipsum'
+        ]);
+
     }
 
     /**

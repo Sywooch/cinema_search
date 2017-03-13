@@ -2,19 +2,16 @@
 
 use yii\db\Migration;
 
-class m170307_171955_country extends Migration
+class m170307_170745_film2 extends Migration
 {
     public function up()
     {
-	$this->createTable('{{%user}}', [
-             'id' => Schema::TYPE_PK,
-             'name' => Schema::TYPE_STRING . ' NOT NULL',
-         ]);
+
     }
 
     public function down()
     {
-        echo "m170307_171955_country cannot be reverted.\n";
+        echo "m170307_170745_film2 cannot be reverted.\n";
 
         return true;
     }

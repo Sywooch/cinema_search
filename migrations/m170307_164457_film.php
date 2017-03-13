@@ -6,7 +6,13 @@ class m170307_164457_film extends Migration
 {
     public function up()
     {
-
+        $this->createTable('{{%film}}', [
+             'id' => Schema::TYPE_PK,
+             'nameFilm' => 'VARCHAR(100)',
+             'ageLimit' => 'VARCHAR(45)',
+             'yearFilm' => Schema::TYPE_INTEGER,
+             'note' => Schema::LONGTEXT,
+         ]);
     }
 
     public function down()

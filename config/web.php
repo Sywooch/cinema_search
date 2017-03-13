@@ -44,7 +44,8 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',
-                'about' => 'site/about'
+                'about' => 'site/about',
+//                'country' => 'site/country'
             ],
         ],
 

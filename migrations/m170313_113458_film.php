@@ -3,7 +3,7 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m170307_164457_film extends Migration
+class m170313_113458_film extends Migration
 {
     public function up()
     {
@@ -18,9 +18,9 @@ class m170307_164457_film extends Migration
 
     public function down()
     {
-        echo "m170307_164457_film cannot be reverted.\n";
+        echo "m170313_113458_film cannot be reverted.\n";
 
-        return true;
+        return false;
     }
 
     /*

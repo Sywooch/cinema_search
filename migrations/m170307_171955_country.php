@@ -1,13 +1,12 @@
 <?php
 
-use yii\db\Schema;
 use yii\db\Migration;
 
 class m170307_171955_country extends Migration
 {
     public function up()
     {
-	$this->createTable('{{%country}}', [
+	$this->createTable('{{%user}}', [
              'id' => Schema::TYPE_PK,
              'name' => Schema::TYPE_STRING . ' NOT NULL',
          ]);

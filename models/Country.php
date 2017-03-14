@@ -41,8 +41,4 @@ class Country extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c516d62926df177739c63be056101e2281f3509c

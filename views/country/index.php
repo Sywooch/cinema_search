@@ -1,19 +1,25 @@
 <?php
+
+use yii\helpers\Url;
+use yii\helpers\Html;
+
 /* @var $this yii\web\View */
 ?>
-<h1>country/index</h1>
+<h1>Список стран</h1>
 
-<<<<<<< HEAD
 <?php foreach ($country as $item) : ?>
 
-	<h2><?= $item->name ?></h2>
+	<h2>
+	<?= Html::a(
+		$item->name,
+		['country/view', 'id' => $item->id],
+		['class' => 'country_link']
+	)?>
+	<!-- <a href="">
+		<?= Url::toRoute(['country/view', 'id' => $item->id]) ?>
+		<?= $item->name ?>
+	</a> -->
+	</h2>
 
 <?php endforeach;?>
-=======
-<? var_dump(($country)); ?>
 
-<?php foreach ($country as $item) : ?>
-    <h2><?= $items->name ?></h2>
-    <div>Страна: <?= $items->name ?></div>
-<?php endforeach;; ?>
->>>>>>> c516d62926df177739c63be056101e2281f3509c

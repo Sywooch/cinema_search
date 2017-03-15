@@ -3,8 +3,8 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 
+/* @var $this yii\web\View */
 ?>
-
 <h1>Список стран</h1>
 
 <?php foreach ($country as $item) : ?>
@@ -22,3 +22,4 @@ use yii\helpers\Html;
 	</h2>
 
 <?php endforeach;?>
+

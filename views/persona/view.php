@@ -11,12 +11,11 @@
 			<?php endif ?>
 		</div>
 		<div class="descriptoin_actors col-md-9">
-			<h2>Имя: <?= $singlePersona->name ?></h2>
-			<h2>Фамилия: <?= $singlePersona->surName ?></h2>
-			<p><b>Дата рождения: </b><?= $singlePersona->dateDR ?></p>
+			<h2><?= $singlePersona->name ?> <?= $singlePersona->surname ?></h2>
+			<p><b>Дата рождения: </b><?= $singlePersona->date_dr ?></p>
 			<p><b>Описание: </b><?= $singlePersona->note ?></p>
 			<p><b>Книги, изданные актером: </b><?= $singlePersona->books ?></p>
-			<p><b>Количество фильмов с актером: </b><?= $singlePersona->countFilmf ?></p>
+			<p><b>Количество фильмов с актером: </b><?= $singlePersona->count_film ?></p>
 			<p><b>ТВ шоу с участием актера: </b><?= $singlePersona->tvShow ?></p>
 		</div>
 	</div>	

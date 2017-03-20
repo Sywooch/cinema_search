@@ -1,14 +1,12 @@
 <?php
 
-use yii\db\Schema;
 use yii\db\Migration;
 
-
-class m170317_140413_film extends Migration
+class m170317_144746_film extends Migration
 {
     public function up()
     {
-         $this->createTable('{{%film}}', [
+        $this->createTable('film', [
             'id' => Schema::TYPE_PK,
             'name' => Schema::TYPE_STRING . ' NOT NULL',
             'year' => Schema::TYPE_INTEGER,
@@ -17,7 +15,7 @@ class m170317_140413_film extends Migration
             'country_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         ]);
 
-         // add foreign key for table `country`
+        // add foreign key for table `country`
         $this->addForeignKey(
             'fk-film-country_id',
             'film',
@@ -26,12 +24,11 @@ class m170317_140413_film extends Migration
             'id',
             'CASCADE'
         );
-
     }
 
     public function down()
     {
-        echo "m170317_140413_film cannot be reverted.\n";
+        echo "m170317_144746_film cannot be reverted.\n";
 
         return false;
     }

@@ -1,13 +1,12 @@
 <?php
-
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m170317_143047_country extends Migration
+class m170317_144804_country extends Migration
 {
     public function up()
     {
-        $this->createTable('{{%country}}', [
+        $this->createTable('country', [
             'id' => Schema::TYPE_PK,
             'name' => 'VARCHAR(45)',
         ]);
@@ -15,7 +14,7 @@ class m170317_143047_country extends Migration
 
     public function down()
     {
-        echo "m170317_143047_country cannot be reverted.\n";
+        echo "m170317_144804_country cannot be reverted.\n";
 
         return false;
     }

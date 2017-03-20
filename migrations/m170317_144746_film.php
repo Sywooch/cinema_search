@@ -6,7 +6,7 @@ class m170317_144746_film extends Migration
 {
     public function up()
     {
-        $this->createTable('film', [
+        $this->createTable('{{%film}}', [
             'id' => Schema::TYPE_PK,
             'name' => Schema::TYPE_STRING . ' NOT NULL',
             'year' => Schema::TYPE_INTEGER,
@@ -15,19 +15,24 @@ class m170317_144746_film extends Migration
             'country_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         ]);
 
+        $this->createTable('{{%country}}', [
+            'id' => Schema::TYPE_PK,
+            'name' => 'VARCHAR(45)',
+        ]);
+
          // creates index for column `author_id`
         $this->createIndex(
             'idx-film-country_id',
-            'film',
+            '{{%film}}',
             'country_id'
         );
 
         // add foreign key for table `country`
         $this->addForeignKey(
             'fk-film-country_id',
-            'film',
+            '{{%film}}',
             'country_id',
-            'country',
+            '{{%country}}',
             'id',
             'CASCADE'
         );

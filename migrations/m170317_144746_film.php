@@ -1,5 +1,5 @@
 <?php
-
+use yii\db\Schema;
 use yii\db\Migration;
 
 class m170317_144746_film extends Migration

@@ -15,6 +15,13 @@ class m170317_144746_film extends Migration
             'country_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         ]);
 
+         // creates index for column `author_id`
+        $this->createIndex(
+            'idx-film-country_id',
+            'film',
+            'country_id'
+        );
+
         // add foreign key for table `country`
         $this->addForeignKey(
             'fk-film-country_id',

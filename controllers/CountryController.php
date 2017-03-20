@@ -8,8 +8,7 @@ class CountryController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-
-    	$countryList = Country::find()->all();
+        $countryList = Country::find()->all();
         return $this->render('index', [
         		'country' => $countryList
         	]);

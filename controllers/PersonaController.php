@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Persona;
+use Yii;
 
 class PersonaController extends \yii\web\Controller
 {
@@ -21,6 +22,20 @@ class PersonaController extends \yii\web\Controller
     	return $this->render('view', [
     			'singlePersona' => $persona
     	]);
+    }
+
+    public function actionCreate()
+
+    {
+        $request = \Yii::$app->request;
+        if ($request->post('Persona')) {
+            $persona = new Persona();
+            $persona->attributes = $request->post('Persona');
+            if ($persona->save()) {
+                $this->redirect(['persona/view', 'id'=> $persona->id]);
+            }
+        }
+        return $this->render('create');
     }
 
 }

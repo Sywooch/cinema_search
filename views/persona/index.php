@@ -23,3 +23,9 @@ use yii\helpers\Html;
 
 <?php endforeach;?>
 
+
+<?= Html::a(
+'Добавить персону',
+['persona/create'],
+['class' => 'btn btn-success']
+) ?>

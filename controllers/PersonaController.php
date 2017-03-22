@@ -3,20 +3,26 @@
 namespace app\controllers;
 
 use app\models\Persona;
+use app\models\PersonaSearch;
 use Yii;
+use yii\data\ActiveDataProvider;
+
 
 class PersonaController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-    	$personaList = Persona::find()->all();
+    	$personaList = Persona::find();
+        $search = new PersonaSearch();
+        $dpPersona = $search->search(Yii::$app->request->get());
         return $this->render('index', [
-        		'persona' => $personaList
+        		'persona' => $dpPersona,
+                'personaSearch' => $search
         ]);
     }
 
 
-    public function actionView($id=1)
+    public function actionView($id)
     {
     	$persona = Persona::find()->where(['id'=> $id])->one();
     	return $this->render('view', [
@@ -25,17 +31,26 @@ class PersonaController extends \yii\web\Controller
     }
 
     public function actionCreate()
+    {
+        return $this->actionUpdate();
+    }
+
+    public function actionUpdate($id = -1)
 
     {
-        $request = \Yii::$app->request;
+        $request = Yii::$app->request;
+        $persona = Persona::find()->where(['id'=> $id])->one();
+        if (is_null($persona))
+            $persona = new Persona;
         if ($request->post('Persona')) {
-            $persona = new Persona();
             $persona->attributes = $request->post('Persona');
             if ($persona->save()) {
                 $this->redirect(['persona/view', 'id'=> $persona->id]);
             }
         }
-        return $this->render('create');
+        return $this->render('create', [
+            'persona' => $persona
+        ]);
     }
 
 }

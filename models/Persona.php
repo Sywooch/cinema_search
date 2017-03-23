@@ -35,8 +35,8 @@ class Persona extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'surname' => 'Surname',
+            'name' => 'Имя',
+            'surname' => 'Фамилия',
             'date_dr' => 'Date Dr',
             'note' => 'Note',
             'photo' => 'Photo',

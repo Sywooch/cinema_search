@@ -5,19 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "country".
+ * This is the model class for table "genre".
  *
  * @property integer $id
  * @property string $name
+ *
+ * @property FilmGenre[] $filmGenres
  */
-class Country extends \yii\db\ActiveRecord
+class Genre extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'country';
+        return 'genre';
     }
 
     /**
@@ -26,8 +28,7 @@ class Country extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name'], 'string', 'max' => 255],
+            [['name'], 'string', 'max' => 45],
         ];
     }
 
@@ -38,7 +39,15 @@ class Country extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Название Страны',
+            'name' => 'Name',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFilmGenres()
+    {
+        return $this->hasMany(FilmGenre::className(), ['genre_id' => 'id']);
     }
 }

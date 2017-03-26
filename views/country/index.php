@@ -26,5 +26,3 @@ use yii\grid\GridView;
         ['country/create'],
         ['class' => 'btn btn-default ']
 ) ?>
->>>>>>> pro1
-

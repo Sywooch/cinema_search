@@ -13,8 +13,8 @@ class m170326_140703_limitageZ extends Migration
     public function down()
     {
         echo "m170326_140703_limitageZ cannot be reverted.\n";
-        $this->execute('delete from {{%persona}}');
-        $this->execute('ALTER TABLE {{%persona}} AUTO_INCREMENT = 1');
+        $this->execute('delete from {{%limitage}}');
+        $this->execute('ALTER TABLE {{%limitage}} AUTO_INCREMENT = 1');
         return true;
     }
 

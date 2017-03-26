@@ -9,11 +9,11 @@ use yii\grid\GridView;
 <h1>Список Фильмов</h1>
 
 <?= GridView::Widget([
-    'dataProvider' => $ашдь,
-    'filterModel' => $ашдьSearch,
+    'dataProvider' => $film,
+    'filterModel' => $filmSearch,
     'columns' => [
         'name',
-        'surname',
+        'year',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{view} {update}'

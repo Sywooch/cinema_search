@@ -6,6 +6,7 @@ $form = ActiveForm::begin(); ?>
 
 <?= $form->field($persona, 'name'); ?>
 <?= $form->field($persona, 'surname'); ?>
+<?= $form->field($persona, 'photo')->fileinput(); ?>
 
 <?= Html::submitButton('Сохранить', ['
 class' => 'btn btn-primary']); ?>

@@ -9,6 +9,9 @@ class Persona extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public $photoFile = null;
+
     public static function tableName()
     {
         return 'persona';
@@ -39,11 +42,21 @@ class Persona extends \yii\db\ActiveRecord
             'surname' => 'Фамилия',
             'date_dr' => 'Date Dr',
             'note' => 'Note',
-            'photo' => 'Photo',
+            'photo' => 'Фото',
             'books' => 'Books',
             'count_film' => 'Count Film',
             'tvShow' => 'Tv Show',
         ];
+    }
+
+    public function upload() 
+    {
+        if($this->validate()) {
+            $this->photoFile->saveAs('uploads/' . $this->photoFile->baseName . '.' . $this->photoFile->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

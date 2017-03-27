@@ -52,7 +52,9 @@ class Persona extends \yii\db\ActiveRecord
     public function upload() 
     {
         if($this->validate()) {
-            $this->photoFile->saveAs('uploads/' . $this->photoFile->baseName . '.' . $this->photoFile->extension);
+            $fileName = 'uploads/' . $this->photoFile->baseName . '.' . $this->photoFile->extension;
+            $this->photoFile->saveAs($fileName);
+            $this->photo = $fileName;
             return true;
         } else {
             return false;

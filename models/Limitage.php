@@ -5,19 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "country".
+ * This is the model class for table "limitage".
  *
  * @property integer $id
  * @property string $name
+ *
+ * @property Film $film
  */
-class Country extends \yii\db\ActiveRecord
+class Limitage extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'country';
+        return 'limitage';
     }
 
     /**
@@ -38,7 +40,15 @@ class Country extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Название Страны',
+            'name' => 'Name',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFilm()
+    {
+        return $this->hasOne(Film::className(), ['idlimitage' => 'id']);
     }
 }

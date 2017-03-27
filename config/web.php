@@ -46,7 +46,9 @@ $config = [
             'rules' => [
                 '/' => 'site/index',
                 'about' => 'site/about',
-                'country/<id:\d+>' => 'country/view'
+                'country/<id:\d+>' => 'country/view',
+                'persona/<id:\d+>' => 'persona/view',
+                'film/<id:\d+>' => 'film/view',
             ],
         ],
         

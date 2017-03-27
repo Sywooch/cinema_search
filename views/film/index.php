@@ -2,23 +2,27 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\grid\GridView;
 
+/* @var $this yii\web\View */
 ?>
+<h1>Список Фильмов</h1>
 
-<h1>Список фильмов:</h1>
+<?= GridView::Widget([
+    'dataProvider' => $film,
+    'filterModel' => $filmSearch,
+    'columns' => [
+        'name',
+        'year',
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'template' => '{view} {update}'
+        ]
+    ]
+]); ?>
 
-<?php foreach ($film as $item) : ?>
-
-    <h2>
-        <?= Html::a(
-            $item->nameFilm,
-            ['film/view', 'id' => $item->id],
-            ['class' => 'film_link']
-        )?>
-        <!-- <a href="">
-		<?= Url::toRoute(['film/view', 'id' => $item->id]) ?>
-		<?= $item->nameFilm ?>
-	</a> -->
-    </h2>
-
-<?php endforeach;?>
+<?= Html::a(
+    'Добавить персону',
+    ['persona/create'],
+    ['class' => 'btn btn-success',]
+) ?>

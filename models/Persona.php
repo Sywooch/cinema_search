@@ -43,13 +43,13 @@ class Persona extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Имя',
             'surname' => 'Фамилия',
-            'date_dr' => 'Date Dr',
-            'note' => 'Note',
-            'photo' => 'Фото',
-            'books' => 'Books',
-            'count_film' => 'Count Film',
-            'tvShow' => 'Tv Show',
-            'country_id' => 'Country ID',
+            'date_dr' => 'Дата рождения',
+            'note' => 'Описание',
+            'photoFile' => 'Фото',
+            'books' => 'Книги',
+            'count_film' => 'Количество фильмов с участием актера',
+            'tvShow' => 'Телевизионное шоу с участием актера',
+            'country_id' => 'Страна',
         ];
     }
 

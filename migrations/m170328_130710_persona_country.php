@@ -3,11 +3,11 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m170328_115830_persona_country extends Migration
+class m170328_130710_persona_country extends Migration
 {
     public function up()
     {
-         $this->addColumn(
+        $this->addColumn(
             "{{%persona}}",
             "country_id",
             "int(11)");
@@ -21,7 +21,7 @@ class m170328_115830_persona_country extends Migration
 
     public function down()
     {
-        echo "m170328_115830_persona_country cannot be reverted.\n";
+        echo "m170328_130710_persona_country cannot be reverted.\n";
 
         return false;
     }

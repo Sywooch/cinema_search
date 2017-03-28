@@ -4,7 +4,7 @@
 		<div class="col-md-3">
 			<?php if ($singlePersona->photo > '') : ?>
 				<div class="photo_acters">
-					<img width="100%" src="<?= $singlePersona->photo ?>">
+					<img width="100%" src="/<?= $singlePersona->photo ?>">
 				</div>
 			<?php else : ?>
 				<div class="nophoto"></div>
@@ -17,6 +17,7 @@
 			<p><b>Книги, изданные актером: </b><?= $singlePersona->books ?></p>
 			<p><b>Количество фильмов с актером: </b><?= $singlePersona->count_film ?></p>
 			<p><b>ТВ шоу с участием актера: </b><?= $singlePersona->tvShow ?></p>
+			<p><b>Страна: </b><?= $singlePersona->country->name ?></p>
 		</div>
 	</div>	
 </div>

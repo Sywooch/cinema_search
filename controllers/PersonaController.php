@@ -6,7 +6,6 @@ use app\models\Persona;
 use app\models\PersonaSearch;
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\web\UploadedFile;
 
 
 class PersonaController extends \yii\web\Controller
@@ -44,10 +43,9 @@ class PersonaController extends \yii\web\Controller
         if (is_null($persona))
             $persona = new Persona;
         if ($request->post('Persona')) {
-            $persona->photoFile = UploadedFile::getInstance($persona, 'photo');
 
             $persona->attributes = $request->post('Persona');
-            if ($persona->save() && $persona->upload()) {
+            if ($persona->upload() && $persona->save()) {
                 $this->redirect(['persona/view', 'id'=> $persona->id]);
             }
         }

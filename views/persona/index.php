@@ -14,6 +14,7 @@ use yii\grid\GridView;
 	'columns' => [
 		'name',
 		'surname',
+		'country.name',
 		[
 		'class' => 'yii\grid\ActionColumn',
 		'template' => '{view} {update}'

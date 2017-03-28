@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 class Persona extends \yii\db\ActiveRecord
 {
@@ -24,10 +25,12 @@ class Persona extends \yii\db\ActiveRecord
     {
         return [
             [['date_dr'], 'safe'],
-            [['count_film'], 'integer'],
+            [['count_film', 'country_id'], 'integer'],
             [['name', 'surname'], 'string', 'max' => 45],
             [['note', 'photo', 'tvShow'], 'string', 'max' => 255],
             [['books'], 'string', 'max' => 100],
+            [['country_id'], 'unique'],
+            [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => Country::className(), 'targetAttribute' => ['country_id' => 'id']],
         ];
     }
 
@@ -46,11 +49,24 @@ class Persona extends \yii\db\ActiveRecord
             'books' => 'Books',
             'count_film' => 'Count Film',
             'tvShow' => 'Tv Show',
+            'country_id' => 'Country ID',
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if(parent::beforeSave($insert)) {
+            $this->upload();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function upload() 
     {
+        $this->photoFile = UploadedFile::getInstance($this, 'photoFile');
+        if(is_null($this->photoFile)) return true;
         if($this->validate()) {
             $fileName = 'uploads/' . $this->photoFile->baseName . '.' . $this->photoFile->extension;
             $this->photoFile->saveAs($fileName);
@@ -67,5 +83,10 @@ class Persona extends \yii\db\ActiveRecord
     public function getFilmPersonas()
     {
         return $this->hasMany(FilmPersona::className(), ['persona_id' => 'id']);
+    }
+
+    public function getCountry()
+    {
+        return $this->hasOne(Country::className(), ['id' => 'country_id']);
     }
 }
